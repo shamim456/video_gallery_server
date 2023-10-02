@@ -1,13 +1,17 @@
 const express = require("express");
 const cors = require("cors");
 const dotenv = require("dotenv");
-const app = express();
 
+const app = express();
 dotenv.config();
 
-app.use(cors());
+// request parser
 app.use(express.json());
 
+//config cors
+app.use(cors());
+
+// routing setup
 app.get("/", (req, res) => {
   res.send("hello Shamim");
 });
